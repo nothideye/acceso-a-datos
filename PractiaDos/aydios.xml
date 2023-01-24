@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>relaxed</nombre>
+		<numeroCanciones>3</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>pepito</artista>
+				<duracion>1</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>pepito</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>pepito</artista>
+				<duracion>1</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>fernandao</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>pepito</artista>
+				<duracion>1</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>holaaaaa</nombre>
+		<numeroCanciones>1</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>pepito</artista>
+				<duracion>1</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

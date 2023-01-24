@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>pepe</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>111</titulo>
+				<artista>111</artista>
+				<duracion>111</duracion>
+			</cancion>
+			<cancion>
+				<titulo>222</titulo>
+				<artista>222</artista>
+				<duracion>222</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>pepe</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>111</titulo>
+				<artista>111</artista>
+				<duracion>111</duracion>
+			</cancion>
+			<cancion>
+				<titulo>222</titulo>
+				<artista>222</artista>
+				<duracion>222</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

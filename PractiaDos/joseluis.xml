@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>nuevaLista</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>alvaro</titulo>
+				<artista>pepe</artista>
+				<duracion>1</duracion>
+			</cancion>
+			<cancion>
+				<titulo>pablo</titulo>
+				<artista>jose</artista>
+				<duracion>2</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

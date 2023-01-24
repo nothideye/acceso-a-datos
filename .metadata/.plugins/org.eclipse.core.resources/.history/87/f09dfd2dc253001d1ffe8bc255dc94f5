@@ -1,0 +1,235 @@
+package main;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
+import org.xml.sax.SAXException;
+
+import canciones.Cancion;
+import canciones.Lista;
+import manejador.XMLHandler;
+import persona.Usuario;
+
+public class MainWritter {
+	
+	
+	static Scanner sc = new Scanner(System.in);
+	static String opcion = "";
+	static ArrayList<Lista> lista;
+	File f = new File(ruta);
+	static String ruta = "";
+	static String nombreLista = "";
+	static int numeroCanciones = 0;
+	static String nombreCancion;
+	XMLOutputFactory xof = XMLOutputFactory.newInstance();
+	XMLStreamWriter xsw;
+	
+	
+
+	public static void main(String[] args) {
+
+	System.out.println();	
+	System.out.println("Elige una de las opciones");
+	System.out.println("1- Leer archivo");
+	System.out.println("2- Registrar nueva lista como Objeto");
+	System.out.println("3- Exporta lista a un archivo en la ruta que desees");
+	
+	opcion = sc.nextLine();
+	
+	switch(opcion) {
+	
+	case "1":
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		SAXParser parser;
+		XMLHandler handler;
+		
+		try {
+			parser = factory.newSAXParser();
+			handler = new XMLHandler();
+			parser.parse(new File("C:\\Users\\XXX\\Desktop\\RealWorkSpace\\WorkspaceAccesoDatos\\PractiaDos\\src\\listas.xml"), handler);
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			e.printStackTrace();
+		}
+		break;
+		
+		
+	case "2":
+		try {
+			xsw = xof.createXMLStreamWriter(new FileWriter("Usuarios.xml"));
+			
+			// Inicio del documento con prólogo (sin salto de línea)
+			xsw.writeStartDocument();
+			
+			// Salto de línea entre el prólogo y el elemento raíz <usuarios>
+			xsw.writeCharacters("\n");
+			
+			// Etiqueta de inicio de <usuarios>
+			xsw.writeStartElement("usuarios");
+			
+			for (Usuario u : usuarios) {
+				
+				// Salto de línea y tabulación para mantener la jerarquía del árbol
+				xsw.writeCharacters("\n\t");
+				
+				// Etiqueta de inicio de <usuario>
+				xsw.writeStartElement("usuario");
+				
+				// Nombre
+				xsw.writeCharacters("\n\t\t");
+				xsw.writeStartElement("nombre");
+				xsw.writeCharacters(u.getNombre());
+				xsw.writeEndElement();
+				
+				// Edad
+				xsw.writeCharacters("\n\t\t");
+				xsw.writeStartElement("edad");
+				xsw.writeCharacters("" + u.getEdad());
+				xsw.writeEndElement();
+				
+				// Fecha de registro
+				xsw.writeCharacters("\n\t\t");
+				xsw.writeStartElement("fechaRegistro");
+				xsw.writeCharacters(u.getFechaRegistro().toString());
+				xsw.writeEndElement();
+				
+				// Cierre de <usuario> con salto de línea y tabulación previa 
+				xsw.writeCharacters("\n\t");
+				xsw.writeEndElement();
+				
+			}
+			
+			xsw.writeCharacters("\n");
+			
+			// Cierre de <usuarios>
+			xsw.writeEndElement();
+
+			// Cierre del documento
+			xsw.writeEndDocument();
+			
+			// Le obligamos a que escriba la información almacenada en el documento y que no lo siga guardando en la "memoria"
+			xsw.flush();
+			
+			xsw.close();
+			
+		} catch (XMLStreamException | IOException e) {
+			e.printStackTrace();
+		}
+		
+		break;
+	}
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*ArrayList<Cancion> canciones = new ArrayList<Cancion>();
+		XMLOutputFactory xof = XMLOutputFactory.newInstance();
+		XMLStreamWriter xsw;
+		
+		try {
+			
+			xsw = xof.createXMLStreamWriter(new FileWriter("listas.xml"));
+			
+			// Inicio del documento con prólogo (sin salto de línea)
+			xsw.writeStartDocument();
+			
+			// Salto de línea entre el prólogo y el elemento raíz <usuarios>
+			xsw.writeCharacters("\n");
+			
+			// Etiqueta de inicio de <usuarios>
+			xsw.writeStartElement("canciones");
+			
+			for (Cancion c : canciones) {
+				
+				// Salto de línea y tabulación para mantener la jerarquía del árbol
+				xsw.writeCharacters("\n\t");
+				
+				// Etiqueta de inicio de <usuario>
+				xsw.writeStartElement("Cancion");
+				
+				// Nombre
+				xsw.writeCharacters("\n\t\t");
+				xsw.writeStartElement("cancion");
+				xsw.writeCharacters(c.getTituloCancion());
+				xsw.writeEndElement();
+				
+				// Edad
+				xsw.writeCharacters("\n\t\t");
+				xsw.writeStartElement("artista");
+				xsw.writeCharacters("" + c.getArtista());
+				xsw.writeEndElement();
+				
+				// Fecha de registro
+				xsw.writeCharacters("\n\t\t");
+				xsw.writeStartElement("duracion");
+				xsw.writeCharacters(c.getDuracionCancion() + "");
+				xsw.writeEndElement();
+				
+				// Cierre de <usuario> con salto de línea y tabulación previa 
+				xsw.writeCharacters("\n\t");
+				xsw.writeEndElement();
+				
+			}
+			
+			xsw.writeCharacters("\n");
+			
+			// Cierre de <usuarios>
+			xsw.writeEndElement();
+
+			// Cierre del documento
+			xsw.writeEndDocument();
+			
+			// Le obligamos a que escriba la información almacenada en el documento y que no lo siga guardando en la "memoria"
+			xsw.flush();
+			
+			xsw.close();
+			
+		} catch (XMLStreamException | IOException e) {
+			e.printStackTrace();
+		}*/
+		
+		
+
+	}
+
+}

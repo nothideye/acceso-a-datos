@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/03-10/03-10.iml" filepath="$PROJECT_DIR$/03-10/03-10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/20-09/20-09.iml" filepath="$PROJECT_DIR$/20-09/20-09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/21-09/21-09.iml" filepath="$PROJECT_DIR$/21-09/21-09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/26-09/26-09.iml" filepath="$PROJECT_DIR$/26-09/26-09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/27-09/27-09.iml" filepath="$PROJECT_DIR$/27-09/27-09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/28-09/28-09.iml" filepath="$PROJECT_DIR$/28-09/28-09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DOM_XML/DOM_XML.iml" filepath="$PROJECT_DIR$/DOM_XML/DOM_XML.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ManejoDeFicheros/ManejoDeFicheros.iml" filepath="$PROJECT_DIR$/ManejoDeFicheros/ManejoDeFicheros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Práctica1VHFT_VCG/Práctica1VHFT_VCG.iml" filepath="$PROJECT_DIR$/Práctica1VHFT_VCG/Práctica1VHFT_VCG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Serializacion/Serializacion.iml" filepath="$PROJECT_DIR$/Serializacion/Serializacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Workspace.iml" filepath="$PROJECT_DIR$/.idea/Workspace.iml" />
+    </modules>
+  </component>
+</project>

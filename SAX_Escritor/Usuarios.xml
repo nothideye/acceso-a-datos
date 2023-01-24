@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<usuarios>
+	<usuario>
+		<nombre>Juan</nombre>
+		<edad>23</edad>
+		<fechaRegistro>2005-02-21</fechaRegistro>
+	</usuario>
+	<usuario>
+		<nombre>Maria</nombre>
+		<edad>32</edad>
+		<fechaRegistro>2020-03-14</fechaRegistro>
+	</usuario>
+	<usuario>
+		<nombre>Lucia</nombre>
+		<edad>51</edad>
+		<fechaRegistro>2016-10-05</fechaRegistro>
+	</usuario>
+</usuarios>

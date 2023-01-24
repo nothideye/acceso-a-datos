@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>victoraso</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>oyequetal</titulo>
+				<artista>victor</artista>
+				<duracion>12</duracion>
+			</cancion>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>pepeito</artista>
+				<duracion>11</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>pepin</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>oyequetal</titulo>
+				<artista>victor</artista>
+				<duracion>12</duracion>
+			</cancion>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>pepeito</artista>
+				<duracion>11</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

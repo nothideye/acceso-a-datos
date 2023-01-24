@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>
+		</nombre>
+		<numeroCanciones>0</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>inventada</titulo>
+				<artista>yo</artista>
+				<duracion>1</duracion>
+			</cancion>
+			<cancion>
+				<titulo>inven</titulo>
+				<artista>el</artista>
+				<duracion>3</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre></nombre>
+		<numeroCanciones>0</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>pepe</titulo>
+				<artista>hola</artista>
+				<duracion>1</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

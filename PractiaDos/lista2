@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>1</nombre>
+		<numeroCanciones>1</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo></titulo>
+				<artista>1</artista>
+				<duracion>1</duracion></cancion>
+		</canciones>
+	</lista>
+</listas>

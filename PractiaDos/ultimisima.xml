@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>hola</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>hola</titulo>
+				<artista>1</artista>
+				<duracion>1</duracion>
+			</cancion>
+			<cancion>
+				<titulo>adios</titulo>
+				<artista>2</artista>
+				<duracion>2</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>nuevaLista</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>hola</titulo>
+				<artista>1</artista>
+				<duracion>1</duracion>
+			</cancion>
+			<cancion>
+				<titulo>adios</titulo>
+				<artista>2</artista>
+				<duracion>2</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

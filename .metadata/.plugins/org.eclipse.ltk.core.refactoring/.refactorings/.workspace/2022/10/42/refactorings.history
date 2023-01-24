@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;14-10&apos; to &apos;SAX_Lector&apos;&#x0D;&#x0A;- Original element: &apos;14-10&apos;&#x0D;&#x0A;- Renamed element: &apos;14-10&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;14-10&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=14-10" name="SAX_Lector" references="true" stamp="1665992837884" version="1.0"/>
+</session>

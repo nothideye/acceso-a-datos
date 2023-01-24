@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<listas>
+	<lista>
+		<nombre>pepito</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>rap</titulo>
+				<artista>nach</artista>
+				<duracion>1</duracion>
+			</cancion>
+			<cancion>
+				<titulo>pop</titulo>
+				<artista>ariana grande</artista>
+				<duracion>2</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+	<lista>
+		<nombre>fernandao</nombre>
+		<numeroCanciones>2</numeroCanciones>
+		<canciones>
+			<cancion>
+				<titulo>rap</titulo>
+				<artista>nach</artista>
+				<duracion>1</duracion>
+			</cancion>
+			<cancion>
+				<titulo>pop</titulo>
+				<artista>ariana grande</artista>
+				<duracion>2</duracion>
+			</cancion>
+		</canciones>
+	</lista>
+</listas>

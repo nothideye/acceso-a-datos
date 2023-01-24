@@ -1,0 +1,250 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+
+import org.xml.sax.SAXException;
+
+import canciones.Cancion;
+import canciones.Lista;
+import manejador.XMLHandler;
+
+
+public class MainWritter {
+	
+	
+	static ArrayList<Lista> listas = new ArrayList<Lista>();
+	
+	static Scanner sc = new Scanner(System.in);
+	static String opcion = "";
+	File f = new File(ruta);
+	static XMLOutputFactory xof = XMLOutputFactory.newInstance();
+	static XMLStreamWriter xsw;
+	static String ruta = "";
+	static String nombreLista = "";
+	static int numeroCanciones = 0;
+	static String tituloCancion;
+	static String nombreArtista = "";
+	static int duracionCancion = 0;
+	static String nombreCancion;
+	static String rutaUsuario;
+	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+
+	
+	
+
+	public static void main(String[] args) {
+			
+	
+	menu();
+	
+
+	}
+	
+	public static void menu() {
+		System.out.println("Elige una de las opciones");
+		System.out.println("1- Leer archivo");
+		System.out.println("2- Registrar nueva lista como Objeto");
+		System.out.println("3- Exporta lista a un archivo en la ruta que desees");
+		
+		opcion = sc.nextLine();
+		
+		switch(opcion) {
+		
+		case "1":
+			SAXParserFactory factory = SAXParserFactory.newInstance();
+			SAXParser parser;
+			XMLHandler handler = null;
+			
+			System.out.println("introduceme la ruta del archivo que quieres leer");
+			try {
+				ruta = br.readLine();
+			} catch (IOException e2) {
+				e2.printStackTrace();
+			}
+			
+			try {
+				parser = factory.newSAXParser();
+				handler = new XMLHandler();
+				parser.parse(new File(ruta), handler);
+			} catch (ParserConfigurationException | SAXException | IOException e) {
+				e.printStackTrace();
+			}
+			
+			listas.addAll(handler.getListas());
+			System.out.println(listas);
+			menu();
+			break;
+			
+			
+		case "2":
+			
+			
+			Lista l = new Lista();
+			System.out.println("indica el nombre de la lista");
+			try {
+				nombreLista = br.readLine();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			l.setNombreLista(nombreLista);
+			System.out.println("indica el numero de canciones");
+			try {
+				numeroCanciones = Integer.parseInt(br.readLine());
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
+			l.setNumeroCanciones(numeroCanciones);
+			
+			for	(int i = 0; i < numeroCanciones; i++) {	
+				try {
+					System.out.println("indica el nombre de la cancion");
+					nombreCancion = br.readLine();
+					System.out.println("indica el nombre del artista");
+					nombreArtista = br.readLine();
+					System.out.println("indica la duracion de la cancion en segundos");
+					duracionCancion = Integer.parseInt(br.readLine());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				l.getListaCanciones().add(new Cancion(nombreCancion, nombreArtista, duracionCancion ));
+				
+			}
+			
+			listas.add(l);
+			System.out.println(listas);
+			menu();
+			break;
+			
+			
+			
+			
+		case "3":
+			
+			System.out.println("introduce la ruta a la que quieres exportar las listas ");
+			Scanner sc1 = new Scanner(System.in);
+			rutaUsuario = sc1.nextLine();
+			
+			try {
+
+				xsw = xof.createXMLStreamWriter(new FileWriter(rutaUsuario));
+				
+				// Inicio del documento con prologo (sin salto de linea)
+				xsw.writeStartDocument();
+				
+				// Salto de línea entre el prólogo y el elemento raíz <usuarios>
+				xsw.writeCharacters("\n");
+				
+				// Etiqueta de inicio de <listas>
+				xsw.writeStartElement("listas");
+				
+				try {
+					
+					
+					
+					for (Lista li : listas) {
+						
+						// Salto de línea y tabulación para mantener la jerarquía del árbol
+						xsw.writeCharacters("\n\t");
+						
+						// Etiqueta de inicio de <usuario>
+						xsw.writeStartElement("lista");
+			
+						
+						// Nombre
+						xsw.writeCharacters("\n\t\t");
+						xsw.writeStartElement("nombre");
+						xsw.writeCharacters(li.getNombreLista());
+						xsw.writeEndElement();
+						
+						// Edad
+						xsw.writeCharacters("\n\t\t");
+						xsw.writeStartElement("numeroCanciones");
+						System.out.println(li.getNumeroCanciones());
+						xsw.writeCharacters("" + li.getNumeroCanciones());
+						xsw.writeEndElement();
+						
+						
+						// Fecha de registro
+						xsw.writeCharacters("\n\t\t");
+						xsw.writeStartElement("canciones");
+						
+						
+						for(Cancion c : li.getListaCanciones()) {
+
+							// Fecha de registro
+							xsw.writeCharacters("\n\t\t\t");
+							xsw.writeStartElement("cancion");
+							
+				
+							
+							// Fecha de registro
+							xsw.writeCharacters("\n\t\t\t\t");
+							xsw.writeStartElement("titulo");
+							xsw.writeCharacters(c.getTituloCancion());
+							xsw.writeEndElement();
+							
+							// Fecha de registro
+							xsw.writeCharacters("\n\t\t\t\t");
+							xsw.writeStartElement("artista");
+							xsw.writeCharacters(c.getArtista());
+							xsw.writeEndElement();
+							
+							// Fecha de registro
+							xsw.writeCharacters("\n\t\t\t\t");
+							xsw.writeStartElement("duracion");
+							xsw.writeCharacters(""+c.getDuracionCancion());
+							xsw.writeEndElement();
+							
+							xsw.writeCharacters("\n\t\t\t");
+							xsw.writeEndElement();
+							
+						}
+					
+						xsw.writeCharacters("\n\t\t");
+						xsw.writeEndElement();
+						
+						xsw.writeCharacters("\n\t");
+						xsw.writeEndElement();
+						
+					} 
+					xsw.writeCharacters("\n");
+					xsw.writeEndElement();
+					
+					xsw.writeEndDocument();
+					
+					xsw.flush();
+					xsw.close();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+				
+			} catch (XMLStreamException | IOException e) {
+				e.printStackTrace();
+			}
+			
+			menu();
+			break;	
+			
+		
+		}
+	}
+
+}

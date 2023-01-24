@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;usuario&apos; to &apos;persona&apos;&#x0D;&#x0A;- Original project: &apos;SAX_Escritor&apos;&#x0D;&#x0A;- Original element: &apos;SAX_Escritor/src/usuario&apos;&#x0D;&#x0A;- Renamed element: &apos;SAX_Escritor/src/persona&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;usuario&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;usuario" name="persona" qualified="false" references="true" stamp="1665992885990" textual="false" version="1.0"/>
+</session>
